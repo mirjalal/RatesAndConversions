@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="currencyData"
+            type="aze.talmir.task.ratesconversions.data.model.CurrencyData" />
+        <variable
+            name="itemClickListener"
+            type="aze.talmir.task.ratesconversions.ui.main.adapter.CurrencyDataItemClickEvent" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/currencyDataItem"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/currencyDataItemHeight"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:onClick="@{() -> itemClickListener.onCurrencyDataItemClick(currencyData)}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/sixteen_dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/sixteen_dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/sixteen_dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/sixteen_dp" />
+
+        <ImageView
+            android:id="@+id/currencyDataFlagIcon"
+            android:layout_width="@dimen/currency_item_flag_width"
+            android:layout_height="@dimen/currency_item_flag_height"
+            app:currencyDataItemIcon="@{currencyData}"
+            app:layout_constraintBottom_toBottomOf="@id/bottomGrid"
+            app:layout_constraintStart_toStartOf="@id/startGrid"
+            app:layout_constraintTop_toTopOf="@id/topGrid"
+            android:contentDescription="@{currencyData.name}"
+            tools:srcCompat="@drawable/errno" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteen_dp"
+            android:text="@{currencyData.code}"
+            android:textSize="@dimen/sixteen_sp"
+            app:layout_constraintStart_toEndOf="@id/currencyDataFlagIcon"
+            app:layout_constraintTop_toTopOf="@id/topGrid"
+            tools:text="EUR" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteen_dp"
+            android:text="@{currencyData.name}"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/bottomGrid"
+            app:layout_constraintStart_toEndOf="@id/currencyDataFlagIcon"
+            tools:text="Euro" />
+
+        <EditText
+            android:id="@+id/currencyAmountEditText"
+            android:maxWidth="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="@{@string/amount(currencyData.rate)}"
+            android:gravity="end"
+            android:maxLines="1"
+            android:imeActionLabel="Done"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            app:layout_constraintEnd_toEndOf="@id/endGrid"
+            app:layout_constraintBottom_toBottomOf="@id/bottomGrid"
+            app:layout_constraintTop_toTopOf="@id/topGrid" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

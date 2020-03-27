@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Rates &amp; conversions</string>
+    <string name="amount">%,.2f</string>
+</resources>
