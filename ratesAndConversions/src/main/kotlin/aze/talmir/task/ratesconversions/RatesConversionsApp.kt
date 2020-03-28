@@ -9,6 +9,7 @@ class RatesConversionsApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        // Start DI and let it to create instances for us.
         startKoin {
             androidContext(this@RatesConversionsApp)
             modules(appModules)

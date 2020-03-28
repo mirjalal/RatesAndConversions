@@ -5,6 +5,9 @@ import aze.talmir.task.ratesconversions.ui.main.RatesConversionsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
+/**
+ * This property is using in application class.
+ */
 val appModules = module {
     // ViewModel instance of RatesConversionsViewModel
     // get() will resolve IRatesConversionsRepository instance

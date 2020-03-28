@@ -5,6 +5,14 @@ apply plugin: 'kotlin-kapt'
 apply from: '../ktlint.gradle'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('../rates_conversions_kystr.jks')
+            storePassword 'threecowsatthesea'
+            keyPassword 'threecowsatthesea'
+            keyAlias = 'rates_conversions'
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
@@ -24,6 +32,10 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable = true
+            jniDebuggable = false
+            renderscriptDebuggable = false
+            signingConfig signingConfigs.release
         }
     }
 
@@ -71,8 +83,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation "androidx.recyclerview:recyclerview:$version_recycler_view"
     implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation"
-
-    //
     implementation "com.google.android.material:material:$version_material"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$version_arch_lifecycle"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$version_arch_lifecycle"
@@ -102,6 +112,9 @@ dependencies {
 
     // Coil
 //    implementation "io.coil-kt:coil:$version_coil"
+
+    // Lottie
+    implementation "com.airbnb.android:lottie:$version_lottie"
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

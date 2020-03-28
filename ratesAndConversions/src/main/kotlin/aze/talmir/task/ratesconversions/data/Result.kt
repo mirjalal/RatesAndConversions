@@ -1,8 +1,8 @@
 package aze.talmir.task.ratesconversions.data
 
 /**
- * A generic class that holds a value with its loading status.
- * @param <T>
+ * A generic class that holds a value with its loading_data status.
+ * @param <R> defines data type the class.
  */
 sealed class Result<out R : Any> {
     data class Success<out R : Any>(val data: R) : Result<R>()

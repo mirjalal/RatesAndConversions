@@ -8,4 +8,6 @@
     <dimen name="six_dp">6dp</dimen>
     <dimen name="currencyDataItemHeight">72dp</dimen>
     <dimen name="sixteen_sp">16sp</dimen>
+    <!-- left_inset_divider_margin = currency_item_flag_width + sixteen_dp + sixteen_dp -->
+    <dimen name="left_inset_divider_margin">72dp</dimen>
 </resources>

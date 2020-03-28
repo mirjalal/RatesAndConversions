@@ -83,7 +83,7 @@
             app:layout_constraintStart_toEndOf="@id/currencyDataFlagIcon"
             tools:text="Euro" />
 
-        <EditText
+        <aze.talmir.task.ratesconversions.helpers.MenuHidingEditText
             android:id="@+id/currencyAmountEditText"
             android:maxWidth="150dp"
             android:layout_width="wrap_content"

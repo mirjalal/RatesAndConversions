@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable name="errorScreenVisible" type="Integer" />
+        <variable name="loadingScreenVisible" type="Integer" />
+        <variable name="mainScreenVisibility" type="Integer" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,6 +26,7 @@
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:clipToPadding="false"
+            android:visibility="@{mainScreenVisibility}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,5 +34,55 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="10"
             tools:listitem="@layout/currency_data_item" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:drawingCacheQuality="high"
+            android:keepScreenOn="true"
+            android:visibility="@{loadingScreenVisible}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_loop="true"
+            app:lottie_speed="1.5"
+            app:lottie_rawRes="@raw/loading_data"
+            app:lottie_renderMode="automatic"
+            app:lottie_autoPlay="true" />
+
+        <TextView
+            android:drawableTop="@drawable/ic_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/eight_dp"
+            android:padding="@dimen/eight_dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:text="@string/sorry_no_rates_for_now"
+            android:visibility="@{errorScreenVisible}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+<!--        <com.airbnb.lottie.LottieAnimationView-->
+<!--            android:id="@+id/waiting"-->
+<!--            android:background="#738290"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:drawingCacheQuality="high"-->
+<!--            android:keepScreenOn="true"-->
+<!--            android:visibility="@{errorScreenVisible}"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:lottie_loop="true"-->
+<!--            app:lottie_rawRes="@raw/waiting_for_data"-->
+<!--            app:lottie_renderMode="hardware"-->
+<!--            app:lottie_autoPlay="true" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

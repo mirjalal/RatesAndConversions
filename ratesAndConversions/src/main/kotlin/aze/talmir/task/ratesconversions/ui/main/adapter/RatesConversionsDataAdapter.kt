@@ -43,6 +43,12 @@ class RatesConversionsDataAdapter(
             binding.currencyData = item
             binding.itemClickListener = clickListener
 
+            // Possibly looks like bizarre code. Then, those bizarre
+            // lines related with weird situation. It may take
+            // several pages of A4 paper if I write that problem here...
+            // Shortly, for historical reasons, those lines should be
+            // placed here.
+            /**************** BEGIN BIZARRE LINES ****************/
             if (item.isBase) {
                 binding.currencyAmountEditText.run {
                     isClickable = true
@@ -63,9 +69,10 @@ class RatesConversionsDataAdapter(
                     removeTextChangedListener(textChangeListener)
                 }
             }
+            /**************** END BIZARRE LINES ****************/
 
             /**
-             * causes the properties updates to execute immediately.
+             * Causes the properties update to execute immediately.
              * since I'm calling [bind] from [onBindViewHolder]
              * having the bindings execute immediately. as a practice
              * can prevent the recycler view from having to perform
@@ -93,7 +100,7 @@ class RatesConversionsDataAdapter(
      */
     companion object DifferChecker : DiffUtil.ItemCallback<CurrencyData>() {
         // We should use referential equality operator - triple equal sign (===) - which returns
-        // true if the object references are the same
+        // true if the object references are the same.
         override fun areItemsTheSame(oldItem: CurrencyData, newItem: CurrencyData) =
             oldItem === newItem
 

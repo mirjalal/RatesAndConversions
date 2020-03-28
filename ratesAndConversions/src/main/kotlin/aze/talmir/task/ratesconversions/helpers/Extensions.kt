@@ -1,14 +1,23 @@
 package aze.talmir.task.ratesconversions.helpers
 
 import androidx.annotation.DrawableRes
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
 import aze.talmir.task.ratesconversions.R
 import aze.talmir.task.ratesconversions.data.model.CurrencyData
 import aze.talmir.task.ratesconversions.data.remotesource.network.RatesConversionsApiModel
 import kotlin.reflect.full.memberProperties
 
+/**
+ * An extension function that maps network call result type value
+ * to the type UI type value to show data to the user.
+ */
 fun RatesConversionsApiModel.asCurrencyData(coefficient: Double): Sequence<CurrencyData> {
     val currencyData = mutableListOf<CurrencyData>()
 
+    // Give unique id to each list item.
+    // This will be used in our recycler view adapter class.
     var itemId = 1
     currencyData.add(
         CurrencyData(
@@ -21,8 +30,8 @@ fun RatesConversionsApiModel.asCurrencyData(coefficient: Double): Sequence<Curre
         )
     )
 
-    // instead of getting all property values on-by-one,
-    // use reflection and let it do it for us.
+    // Instead of getting all property values one-by-one,
+    // use reflection and let it do it for us :D
     for (prop in RatesConversionsApiModel.Rates::class.memberProperties) {
         itemId += 1
         prop.run {
@@ -38,6 +47,8 @@ fun RatesConversionsApiModel.asCurrencyData(coefficient: Double): Sequence<Curre
         }
     }
 
+    // Don't show base currency from previous list...
+    // filter ext function could also be used instead of distinctBy.
     return currencyData.asSequence().distinctBy { it.code }
 }
 
@@ -141,3 +152,15 @@ private val mapOfCurrencyNameByCode by lazy(LazyThreadSafetyMode.NONE) {
 }
 
 private fun String.currencyName() = mapOfCurrencyNameByCode[this] ?: "Unknown Currency"
+
+/**
+ * An extension function for [RecyclerView] to set inset divider to it.
+ */
+fun RecyclerView.setDivider(@DrawableRes drawableRes: Int) {
+    val divider = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+    val drawable = ContextCompat.getDrawable(context, drawableRes)
+    drawable?.let {
+        divider.setDrawable(it)
+        addItemDecoration(divider)
+    }
+}
