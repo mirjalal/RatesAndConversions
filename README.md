@@ -4,9 +4,9 @@
 
 ## Screenshots
 
-|         Main screen         |          Loading screen           |             Enter amount screen             |           New rates screen            |         Error screen          |
-|:---------------------------:|:---------------------------------:|:-------------------------------------------:|:-------------------------------------:|:-----------------------------:|
-| ![Main screen][main_screen] | ![Loading screen][loading_screen] | ![Enter amount screen][enter_amount_screen] | ![New rates screen][new_rates_screen] | ![Error screen][error_screen] |
+|          Loading screen           |         Main screen         |             Enter amount screen             |           New rates screen            |         Error screen          |
+|:---------------------------------:|:---------------------------:|:-------------------------------------------:|:-------------------------------------:|:-----------------------------:|
+| ![Loading screen][loading_screen] | ![Main screen][main_screen] | ![Enter amount screen][enter_amount_screen] | ![New rates screen][new_rates_screen] | ![Error screen][error_screen] |
 
 
 ## Architecture
