@@ -54,7 +54,9 @@ class RatesConversionsFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         binding = RatesConversionsFragmentBinding.inflate(inflater)
         binding.lifecycleOwner = viewLifecycleOwner

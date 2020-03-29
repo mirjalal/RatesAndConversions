@@ -1,10 +1,11 @@
 package aze.talmir.task.ratesconversions.data.remotesource
 
 import aze.talmir.task.ratesconversions.data.Result
+import aze.talmir.task.ratesconversions.helpers.asCurrencyData
+//import aze.talmir.task.ratesconversions.helpers.wrapEspressoIdlingResource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import aze.talmir.task.ratesconversions.helpers.asCurrencyData
 
 /**
  * Repository layer of the application.
@@ -20,14 +21,16 @@ class RatesConversionsRepository(
 ) : IRatesConversionsRepository {
 
     override suspend fun getRates(base: String, coefficient: Double) =
-        withContext(ioDispatcher) {
-            when (val callResult = ratesConversionsRemoteDataSource.getRates(base)) {
-                is Result.Success -> return@withContext Result.Success(
-                    callResult.data.asCurrencyData(
-                        coefficient
+//        wrapEspressoIdlingResource {
+            withContext(ioDispatcher) {
+                when (val callResult = ratesConversionsRemoteDataSource.getRates(base)) {
+                    is Result.Success -> return@withContext Result.Success(
+                        callResult.data.asCurrencyData(
+                            coefficient
+                        )
                     )
-                )
-                is Result.Error -> return@withContext callResult
+                    is Result.Error -> return@withContext Result.Error(callResult.msg)
+                }
             }
-        }
+//        }
 }

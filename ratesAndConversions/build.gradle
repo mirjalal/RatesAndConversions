@@ -5,6 +5,10 @@ apply plugin: 'kotlin-kapt'
 apply from: '../ktlint.gradle'
 
 android {
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
+
     signingConfigs {
         release {
             storeFile file('../rates_conversions_kystr.jks')
@@ -25,6 +29,10 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // The following argument makes the Android Test Orchestrator run its
+        // "pm clear" command after each test invocation. This command ensures
+        // that the app's state is completely cleared between tests.
+        testInstrumentationRunnerArguments clearPackageData: 'true'
     }
 
     buildTypes {
@@ -32,7 +40,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            debuggable = true
+            debuggable = false
             jniDebuggable = false
             renderscriptDebuggable = false
             signingConfig signingConfigs.release
@@ -50,16 +58,17 @@ android {
         main.java.srcDirs = ['src/main/kotlin']
         main.assets.srcDirs = ['src/main/assets']
 
-        test.java.srcDirs = ['src/test/kotlin']
+        test.java.srcDirs = ['src/test/kotlin', 'src/shared/kotlin']
         test.res.srcDirs = ['src/test/res']
 
-        androidTest.java.srcDirs = ['src/androidTest/kotlin']
+        androidTest.java.srcDirs = ['src/androidTest/kotlin', 'src/shared/kotlin']
         androidTest.res.srcDirs = ['src/androidTest/res']
     }
 
     // Always show the result of every unit test, even if it passes.
     testOptions.unitTests {
         includeAndroidResources = true
+        returnDefaultValues = true // this option is required to not break our unit tests
 
         all {
             testLogging {
@@ -116,7 +125,29 @@ dependencies {
     // Lottie
     implementation "com.airbnb.android:lottie:$version_lottie"
 
-    testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    // Dependencies for local unit tests
+    testImplementation "junit:junit:$verision_junit"
+    testImplementation "org.hamcrest:hamcrest-all:$version_hamcrest"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version_coroutines"
+
+    // AndroidX test - unit testing
+    testImplementation "androidx.test:core-ktx:$version_androidx_test_core"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    //
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version_coroutines"
+
+    androidTestImplementation "androidx.test:core:1.2.0"
+    debugImplementation "androidx.fragment:fragment-testing:1.2.3"
+    androidTestImplementation "androidx.fragment:fragment-testing:1.2.3"
+
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation "androidx.test.ext:junit:1.1.1"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
+    androidTestImplementation "androidx.test.ext:truth:1.2.0"
+
+    // comment out if idling resource codes will be used
+//    implementation "androidx.test.espresso:espresso-idling-resource:$version_espresso"
 }
