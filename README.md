@@ -3,7 +3,7 @@
 [![mirjalal](https://circleci.com/gh/mirjalal/RatesAndConversions.svg?style=shield)](https://circleci.com/gh/mirjalal/RatesAndConversions)
 
 
-Made with <span style="color: #e25555;">&hearts;</span> in Azerbaijan.
+Made with :heart: in Azerbaijan.
 
 
 ## Screenshots
