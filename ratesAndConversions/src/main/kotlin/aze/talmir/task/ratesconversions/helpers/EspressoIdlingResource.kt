@@ -1,6 +1,6 @@
 package aze.talmir.task.ratesconversions.helpers
 
-//import androidx.test.espresso.idling.CountingIdlingResource
+// import androidx.test.espresso.idling.CountingIdlingResource
 
 /**
  * Two main idling resources exist:
@@ -12,7 +12,7 @@ package aze.talmir.task.ratesconversions.helpers
  *
  * p.s. could be uncommented after the pointed errors fixed...
  */
-//object EspressoIdlingResource {
+// object EspressoIdlingResource {
 //
 //    @JvmField
 //    val countingIdlingResource = CountingIdlingResource("GLOBAL")
@@ -24,9 +24,9 @@ package aze.talmir.task.ratesconversions.helpers
 //        if (!countingIdlingResource.isIdleNow)
 //            countingIdlingResource.decrement() // app is not doing anything
 //    }
-//}
+// }
 //
-//inline fun <T> wrapEspressoIdlingResource(block: () -> T): T {
+// inline fun <T> wrapEspressoIdlingResource(block: () -> T): T {
 //    // Espresso does not work well with coroutines yet. See
 //    // https://github.com/Kotlin/kotlinx.coroutines/issues/982
 //    EspressoIdlingResource.increment() // Set app as busy.
@@ -35,4 +35,4 @@ package aze.talmir.task.ratesconversions.helpers
 //    } finally {
 //        EspressoIdlingResource.decrement() // Set app as idle.
 //    }
-//}
+// }

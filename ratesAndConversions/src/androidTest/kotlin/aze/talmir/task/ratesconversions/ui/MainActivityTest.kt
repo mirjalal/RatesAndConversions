@@ -1,26 +1,26 @@
 package aze.talmir.task.ratesconversions.ui
 
-//import androidx.test.core.app.ActivityScenario
-//import androidx.test.espresso.Espresso.onView
-//import androidx.test.espresso.IdlingRegistry
-//import androidx.test.espresso.IdlingResource
-//import androidx.test.espresso.assertion.ViewAssertions.matches
-//import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-//import androidx.test.espresso.matcher.ViewMatchers.withText
-//import androidx.test.ext.junit.runners.AndroidJUnit4
-//import androidx.test.filters.LargeTest
-//import androidx.test.rule.ActivityTestRule
-//import aze.talmir.task.ratesconversions.ServiceLocator
-//import aze.talmir.task.ratesconversions.data.IRatesConversionsRepository
-//import aze.talmir.task.ratesconversions.helpers.DataBindingIdlingResource
-//import aze.talmir.task.ratesconversions.helpers.EspressoIdlingResource
-//import aze.talmir.task.ratesconversions.helpers.monitorActivity
-//import kotlinx.coroutines.runBlocking
-//import org.junit.After
-//import org.junit.Before
-//import org.junit.Rule
-//import org.junit.Test
-//import org.junit.runner.RunWith
+// import androidx.test.core.app.ActivityScenario
+// import androidx.test.espresso.Espresso.onView
+// import androidx.test.espresso.IdlingRegistry
+// import androidx.test.espresso.IdlingResource
+// import androidx.test.espresso.assertion.ViewAssertions.matches
+// import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+// import androidx.test.espresso.matcher.ViewMatchers.withText
+// import androidx.test.ext.junit.runners.AndroidJUnit4
+// import androidx.test.filters.LargeTest
+// import androidx.test.rule.ActivityTestRule
+// import aze.talmir.task.ratesconversions.ServiceLocator
+// import aze.talmir.task.ratesconversions.data.IRatesConversionsRepository
+// import aze.talmir.task.ratesconversions.helpers.DataBindingIdlingResource
+// import aze.talmir.task.ratesconversions.helpers.EspressoIdlingResource
+// import aze.talmir.task.ratesconversions.helpers.monitorActivity
+// import kotlinx.coroutines.runBlocking
+// import org.junit.After
+// import org.junit.Before
+// import org.junit.Rule
+// import org.junit.Test
+// import org.junit.runner.RunWith
 
 /**
  * End-to-end tests should be located right here!
@@ -39,9 +39,9 @@ package aze.talmir.task.ratesconversions.ui
  * I am very sorry for that I could not continue writing
  * either integration or end-to-end tests... I apologize.
  */
-//@RunWith(AndroidJUnit4::class)
-//@LargeTest
-//class MainActivityTest {
+// @RunWith(AndroidJUnit4::class)
+// @LargeTest
+// class MainActivityTest {
 //
 //    @Rule
 //    @JvmField var activityRule: ActivityTestRule<MainActivity> = ActivityTestRule(MainActivity::class.java)
@@ -91,4 +91,4 @@ package aze.talmir.task.ratesconversions.ui
 //        // finish the activity
 //        getActivity().finishActivity(1)
 //    }
-//}
+// }

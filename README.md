@@ -1,6 +1,10 @@
-# Rates & Conversions
+# ![][app_logo] Rates & Conversions
 
-![][app_logo]
+[![mirjalal](https://circleci.com/gh/mirjalal/RatesAndConversions.svg?style=shield)](https://circleci.com/gh/mirjalal/RatesAndConversions)
+
+
+Made with <span style="color: #e25555;">&hearts;</span> in Azerbaijan.
+
 
 ## Screenshots
 
@@ -59,6 +63,14 @@ project. To build release artifact:
 Or alternatively, simply run `./gradlew assembleRelease` command in
 terminal & wait for successful build report from the gradle.
 
+
+## Copyrights:
+
+1. [app logo][app_logo] made by [Freepik] from [Flaticon].
+2. Country flags in [drawable][country_flags_folder] were downloaded
+   from [country flags][country_flags].
+
+
 [app_logo]: images/app_logo.jpg
 [main_screen]: images/main_screen.jpg
 [loading_screen]: images/loading_screen.jpg
@@ -80,4 +92,9 @@ terminal & wait for successful build report from the gradle.
 [fragment]: ratesAndConversions/src/main/kotlin/aze/talmir/task/ratesconversions/ui/main/RatesConversionsFragment.kt
 [viewModel]: ratesAndConversions/src/main/kotlin/aze/talmir/task/ratesconversions/ui/main/RatesConversionsFragment.kt
 [other UI related classes/files]: ratesAndConversions/src/main/kotlin/aze/talmir/task/ratesconversions/ui/main/adapter
+[country_flags_folder]: ratesAndConversions/src/main/res/drawable
+
+[Freepik]: https://www.flaticon.com/authors/freepik
+[Flaticon]: https://www.flaticon.com
+[country_flags]: https://www.countryflags.com/en/
 

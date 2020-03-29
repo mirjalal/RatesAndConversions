@@ -3,8 +3,8 @@ package aze.talmir.task.ratesconversions.ui.main
 import aze.talmir.task.ratesconversions.MainCoroutineRule
 import aze.talmir.task.ratesconversions.R
 import aze.talmir.task.ratesconversions.data.FakeRateConversionRepository
-import aze.talmir.task.ratesconversions.helpers.Result
 import aze.talmir.task.ratesconversions.data.model.CurrencyData
+import aze.talmir.task.ratesconversions.helpers.Result
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineScope
 import kotlinx.coroutines.test.runBlockingTest
