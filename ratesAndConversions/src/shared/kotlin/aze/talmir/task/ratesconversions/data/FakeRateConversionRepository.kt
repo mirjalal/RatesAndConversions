@@ -1,9 +1,10 @@
 package aze.talmir.task.ratesconversions.data
 
 import aze.talmir.task.ratesconversions.data.model.CurrencyData
-import aze.talmir.task.ratesconversions.data.remotesource.IRatesConversionsRepository
+import aze.talmir.task.ratesconversions.helpers.Result
 
-class FakeRateConversionRepository : IRatesConversionsRepository {
+class FakeRateConversionRepository :
+    IRatesConversionsRepository {
 
     private var currencyDataServiceData = linkedMapOf<Int, CurrencyData>()
 

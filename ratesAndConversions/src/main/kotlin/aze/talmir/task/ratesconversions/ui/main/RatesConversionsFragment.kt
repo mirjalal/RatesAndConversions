@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import aze.talmir.task.ratesconversions.R
-import aze.talmir.task.ratesconversions.data.Result
+import aze.talmir.task.ratesconversions.helpers.Result
 import aze.talmir.task.ratesconversions.data.model.CurrencyData
 import aze.talmir.task.ratesconversions.databinding.RatesConversionsFragmentBinding
 import aze.talmir.task.ratesconversions.helpers.setDivider

@@ -1,9 +1,9 @@
 package aze.talmir.task.ratesconversions
 
 import androidx.annotation.VisibleForTesting
-import aze.talmir.task.ratesconversions.data.remotesource.IRatesConversionsRepository
+import aze.talmir.task.ratesconversions.data.IRatesConversionsRepository
 import aze.talmir.task.ratesconversions.data.remotesource.RatesConversionsRemoteDataSource
-import aze.talmir.task.ratesconversions.data.remotesource.RatesConversionsRepository
+import aze.talmir.task.ratesconversions.data.repo.RatesConversionsRepository
 
 /**
  * The service locator pattern involves making a singleton class called
@@ -39,9 +39,10 @@ object ServiceLocator {
         }
 
     private fun createRatesConversionsRepository(): RatesConversionsRepository {
-        val newRepository = RatesConversionsRepository(
-            RatesConversionsRemoteDataSource()
-        )
+        val newRepository =
+            RatesConversionsRepository(
+                RatesConversionsRemoteDataSource()
+            )
         ratesConversionsRepository = newRepository
         return newRepository
     }

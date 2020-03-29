@@ -1,4 +1,4 @@
-package aze.talmir.task.ratesconversions.data
+package aze.talmir.task.ratesconversions.helpers
 
 /**
  * A generic class that holds a value with its loading_data status.

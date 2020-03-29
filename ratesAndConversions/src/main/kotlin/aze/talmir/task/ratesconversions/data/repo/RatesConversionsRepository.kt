@@ -1,6 +1,8 @@
-package aze.talmir.task.ratesconversions.data.remotesource
+package aze.talmir.task.ratesconversions.data.repo
 
-import aze.talmir.task.ratesconversions.data.Result
+import aze.talmir.task.ratesconversions.data.IRatesConversionsDataSource
+import aze.talmir.task.ratesconversions.data.IRatesConversionsRepository
+import aze.talmir.task.ratesconversions.helpers.Result
 import aze.talmir.task.ratesconversions.helpers.asCurrencyData
 //import aze.talmir.task.ratesconversions.helpers.wrapEspressoIdlingResource
 import kotlinx.coroutines.CoroutineDispatcher

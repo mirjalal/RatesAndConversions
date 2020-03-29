@@ -11,7 +11,7 @@ package aze.talmir.task.ratesconversions.ui
 //import androidx.test.filters.LargeTest
 //import androidx.test.rule.ActivityTestRule
 //import aze.talmir.task.ratesconversions.ServiceLocator
-//import aze.talmir.task.ratesconversions.data.remotesource.IRatesConversionsRepository
+//import aze.talmir.task.ratesconversions.data.IRatesConversionsRepository
 //import aze.talmir.task.ratesconversions.helpers.DataBindingIdlingResource
 //import aze.talmir.task.ratesconversions.helpers.EspressoIdlingResource
 //import aze.talmir.task.ratesconversions.helpers.monitorActivity

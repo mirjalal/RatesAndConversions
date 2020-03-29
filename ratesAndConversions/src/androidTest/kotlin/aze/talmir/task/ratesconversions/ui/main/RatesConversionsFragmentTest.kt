@@ -9,7 +9,7 @@ package aze.talmir.task.ratesconversions.ui.main
 //import aze.talmir.task.ratesconversions.MainCoroutineRule
 //import aze.talmir.task.ratesconversions.ServiceLocator
 //import aze.talmir.task.ratesconversions.data.FakeRateConversionRepository
-//import aze.talmir.task.ratesconversions.data.remotesource.IRatesConversionsRepository
+//import aze.talmir.task.ratesconversions.data.IRatesConversionsRepository
 //import aze.talmir.task.ratesconversions.ui.MainActivity
 //import kotlinx.coroutines.ExperimentalCoroutinesApi
 //import kotlinx.coroutines.ObsoleteCoroutinesApi

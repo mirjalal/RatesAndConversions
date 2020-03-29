@@ -1,8 +1,9 @@
 package aze.talmir.task.ratesconversions.data.remotesource
 
 import aze.talmir.task.ratesconversions.MainCoroutineRule
-import aze.talmir.task.ratesconversions.data.Result
+import aze.talmir.task.ratesconversions.helpers.Result
 import aze.talmir.task.ratesconversions.data.remotesource.network.RatesConversionsApiModel
+import aze.talmir.task.ratesconversions.data.repo.RatesConversionsRepository
 import aze.talmir.task.ratesconversions.helpers.asCurrencyData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -38,10 +39,11 @@ class RatesConversionsRepositoryTest {
     fun setUpRepository() {
         ratesConversionsRemoteDataSource = FakeRemoteDataSource(fakeApiData)
 
-        ratesConversionsRepository = RatesConversionsRepository(
-            ratesConversionsRemoteDataSource,
-            Dispatchers.Main // because of the coroutine rule is a test coroutine dispatcher, I can use Main dispatcher
-        )
+        ratesConversionsRepository =
+            RatesConversionsRepository(
+                ratesConversionsRemoteDataSource,
+                Dispatchers.Main // because of the coroutine rule is a test coroutine dispatcher, I can use Main dispatcher
+            )
     }
 
     @ExperimentalCoroutinesApi

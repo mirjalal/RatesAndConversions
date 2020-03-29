@@ -1,6 +1,7 @@
 package aze.talmir.task.ratesconversions.data.remotesource
 
-import aze.talmir.task.ratesconversions.data.Result
+import aze.talmir.task.ratesconversions.data.IRatesConversionsDataSource
+import aze.talmir.task.ratesconversions.helpers.Result
 import aze.talmir.task.ratesconversions.data.remotesource.network.RateConversionsRemoteDataRetrieverApi.rateConversionsDataRetrieverApiService
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

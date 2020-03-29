@@ -1,7 +1,7 @@
 package aze.talmir.task.ratesconversions.ui.main
 
 import androidx.lifecycle.ViewModel
-import aze.talmir.task.ratesconversions.data.remotesource.IRatesConversionsRepository
+import aze.talmir.task.ratesconversions.data.IRatesConversionsRepository
 
 /**
  * Classic ViewModel class. Helps UI (fields) to communicate with
