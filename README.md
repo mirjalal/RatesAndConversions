@@ -1,9 +1,7 @@
-# ![][app_logo] Rates & Conversions
-
-[![mirjalal](https://circleci.com/gh/mirjalal/RatesAndConversions.svg?style=shield)](https://circleci.com/gh/mirjalal/RatesAndConversions)
+# ![][app_logo] Rates & Conversions [![mirjalal](https://circleci.com/gh/mirjalal/RatesAndConversions.svg?style=shield)](https://circleci.com/gh/mirjalal/RatesAndConversions)
 
 
-Made with :heart: in Azerbaijan.
+## Made with :heart: in Azerbaijan.
 
 
 ## Screenshots
