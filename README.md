@@ -42,8 +42,8 @@ information about them. Finally, UI package keeps main activity, a
 Additionally, [Service Locator][service_locator] file is used to manage
 layers from one point.
 
-*NOTE: Additional information about classes/files/functions about their
-functionalities were added as comments.*
+*NOTE: Additional information about classes/files/functions and about 
+their functionalities were added as comments.*
 
 ## Requirements
 
@@ -51,7 +51,7 @@ Android Studio v3.5+, Kotlin v1.3.71 & JDK v8 are enough to build the
 project. To build release artifact:
 1. Select `Generate Signed Bundle/Apk` option from `Build` menu in your
    IDE.
-2. Pick the `rates_conversions_kystr.jks` file as key store fil from
+2. Pick the `rates_conversions_kystr.jks` file as key store file from
    project root path.
 3. Enter `threecowsatthesea` text for all password fields.
 4. Enter `rates_conversions` as key store alias and hit next.
@@ -64,7 +64,7 @@ terminal & wait for successful build report from the gradle.
 
 ## Copyrights:
 
-1. [app logo][app_logo] made by [Freepik] from [Flaticon].
+1. [App logo][app_logo] made by [Freepik] from [Flaticon].
 2. Country flags in [drawable][country_flags_folder] were downloaded
    from [country flags][country_flags].
 
