@@ -8,6 +8,7 @@ import aze.talmir.task.ratesconversions.helpers.asCurrencyData
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.math.BigDecimal
 
 /**
  * Repository layer of the application.
@@ -22,17 +23,15 @@ class RatesConversionsRepository(
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : IRatesConversionsRepository {
 
-    override suspend fun getRates(base: String, coefficient: Double) =
-//        wrapEspressoIdlingResource {
-            withContext(ioDispatcher) {
-                when (val callResult = ratesConversionsRemoteDataSource.getRates(base)) {
-                    is Result.Success -> return@withContext Result.Success(
-                        callResult.data.asCurrencyData(
-                            coefficient
-                        )
+    override suspend fun getRates(base: String, coefficient: BigDecimal) =
+        withContext(ioDispatcher) {
+            when (val callResult = ratesConversionsRemoteDataSource.getRates(base)) {
+                is Result.Success -> return@withContext Result.Success(
+                    callResult.data.asCurrencyData(
+                        coefficient
                     )
-                    is Result.Error -> return@withContext Result.Error(callResult.msg)
-                }
+                )
+                is Result.Error -> return@withContext Result.Error(callResult.msg)
             }
-//        }
+        }
 }

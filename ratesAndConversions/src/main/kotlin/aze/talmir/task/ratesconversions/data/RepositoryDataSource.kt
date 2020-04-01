@@ -3,9 +3,10 @@ package aze.talmir.task.ratesconversions.data
 import aze.talmir.task.ratesconversions.data.model.CurrencyData
 import aze.talmir.task.ratesconversions.data.remotesource.network.RatesConversionsApiModel
 import aze.talmir.task.ratesconversions.helpers.Result
+import java.math.BigDecimal
 
 interface IRatesConversionsRepository {
-    suspend fun getRates(base: String, coefficient: Double): Result<Sequence<CurrencyData>>
+    suspend fun getRates(base: String, coefficient: BigDecimal): Result<Sequence<CurrencyData>>
 }
 
 interface IRatesConversionsDataSource {

@@ -51,12 +51,12 @@ class RatesConversionsRepositoryTest {
     fun getRatesConversionData_requestFromRemoteDataSource() = mainCoroutineRule.runBlockingTest {
         // when rates are requested from the repository
         val rates =
-            ratesConversionsRepository.getRates("EUR", 1.0) as Result.Success
+            ratesConversionsRepository.getRates("EUR", 1.0.toBigDecimal()) as Result.Success
 
         // then rates are loaded from the remote data source
         // because of Kotlin Sequences are not values,
         // so equality doesn't really make sense for sequences.
         // Thus, toList() applied.
-        assertThat(rates.data.toList(), IsEqual(fakeApiData.asCurrencyData(1.0).toList()))
+        assertThat(rates.data.toList(), IsEqual(fakeApiData.asCurrencyData(1.0.toBigDecimal()).toList()))
     }
 }

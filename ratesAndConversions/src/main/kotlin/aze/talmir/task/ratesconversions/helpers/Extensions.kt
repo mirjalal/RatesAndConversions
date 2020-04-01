@@ -7,13 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import aze.talmir.task.ratesconversions.R
 import aze.talmir.task.ratesconversions.data.model.CurrencyData
 import aze.talmir.task.ratesconversions.data.remotesource.network.RatesConversionsApiModel
+import java.math.BigDecimal
 import kotlin.reflect.full.memberProperties
 
 /**
  * An extension function that maps network call result type value
  * to the type UI type value to show data to the user.
  */
-fun RatesConversionsApiModel.asCurrencyData(coefficient: Double): Sequence<CurrencyData> {
+fun RatesConversionsApiModel.asCurrencyData(coefficient: BigDecimal): Sequence<CurrencyData> {
     val currencyData = mutableListOf<CurrencyData>()
 
     // Give unique id to each list item.
@@ -40,7 +41,7 @@ fun RatesConversionsApiModel.asCurrencyData(coefficient: Double): Sequence<Curre
                     itemId,
                     name,
                     name.currencyName(),
-                    coefficient * (prop.get(rates) as Double),
+                    coefficient.times(prop.get(rates).toString().toBigDecimal()),
                     name.flag()
                 )
             )

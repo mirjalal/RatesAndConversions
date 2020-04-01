@@ -41,13 +41,13 @@ class RatesConversionsViewModelTest {
     private lateinit var rateConversionsViewModel: RatesConversionsViewModel
 
     private val eurCurrencyData =
-        CurrencyData(1, "EUR", "Euro", 41.26, R.drawable.eur, true)
+        CurrencyData(1, "EUR", "Euro", 41.26.toBigDecimal(), R.drawable.eur, true)
     private val gbpCurrencyData =
-        CurrencyData(2, "GBP", "Pound sterling", 41.26, R.drawable.gbp, false)
+        CurrencyData(2, "GBP", "Pound sterling", 41.26.toBigDecimal(), R.drawable.gbp, false)
     private val usdCurrencyData =
-        CurrencyData(3, "USD", "United States Dollar", 41.26, R.drawable.usd, false)
+        CurrencyData(3, "USD", "United States Dollar", 41.26.toBigDecimal(), R.drawable.usd, false)
     private val ilsCurrencyData =
-        CurrencyData(4, "ILS", "Israeli New Shekel", 41.26, R.drawable.ils, false)
+        CurrencyData(4, "ILS", "Israeli New Shekel", 41.26.toBigDecimal(), R.drawable.ils, false)
 
     @Before
     fun setupViewModel() {
@@ -62,7 +62,7 @@ class RatesConversionsViewModelTest {
     @ExperimentalCoroutinesApi
     @Test
     fun getRatesAndConversions_returnsNonNullValue() = mainCoroutineRule.runBlockingTest {
-        val value = rateConversionsViewModel.getRatesAndConversions("EUR", 1.2)
+        val value = rateConversionsViewModel.getRatesAndConversions("EUR", 1.2.toBigDecimal())
         assertThat(value, not(nullValue()))
     }
 
@@ -70,7 +70,7 @@ class RatesConversionsViewModelTest {
     @Test
     fun getRatesAndConversions_returnsCorrectValue() = mainCoroutineRule.runBlockingTest {
         val value =
-            rateConversionsViewModel.getRatesAndConversions("EUR", 1.2) as Result.Success
+            rateConversionsViewModel.getRatesAndConversions("EUR", 1.2.toBigDecimal()) as Result.Success
         assertThat(
             value.data.toList(),
             IsEqual(

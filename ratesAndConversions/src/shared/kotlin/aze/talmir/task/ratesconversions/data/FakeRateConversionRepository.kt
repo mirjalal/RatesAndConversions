@@ -2,6 +2,7 @@ package aze.talmir.task.ratesconversions.data
 
 import aze.talmir.task.ratesconversions.data.model.CurrencyData
 import aze.talmir.task.ratesconversions.helpers.Result
+import java.math.BigDecimal
 
 class FakeRateConversionRepository :
     IRatesConversionsRepository {
@@ -10,7 +11,7 @@ class FakeRateConversionRepository :
 
     override suspend fun getRates(
         base: String,
-        coefficient: Double
+        coefficient: BigDecimal
     ): Result<Sequence<CurrencyData>> {
         return Result.Success(currencyDataServiceData.values.asSequence())
     }

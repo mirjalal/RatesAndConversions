@@ -41,10 +41,10 @@ class RatesConversionsFragment : Fragment() {
 
     private val ratesConversionsData = MutableLiveData<Result<Sequence<CurrencyData>>>()
     private var baseCurrency = "EUR"
-    private var coefficient = 1.0
+    private var coefficient = 1.0.toBigDecimal()
         set(value) {
-            field = if (value > 0.0) value
-            else 1.0
+            field = if (value > 0.0.toBigDecimal()) value
+            else 1.0.toBigDecimal()
         }
 
     private var tickerChannel: ReceiveChannel<Unit>? = null
@@ -90,7 +90,7 @@ class RatesConversionsFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {
                 if (c == 1) {
                     stopObservability()
-                    coefficient = s.toString().toDoubleOrNull() ?: 1.0
+                    coefficient = s.toString().toBigDecimalOrNull() ?: coefficient
                     startObservability(true)
                 }
             }
